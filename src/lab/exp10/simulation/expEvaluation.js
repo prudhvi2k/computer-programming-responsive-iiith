@@ -139,7 +139,7 @@ window.model = {
 		else if( sub[i] == '*' )
 			c = a * b;
 		else if( sub[i] == '/' )
-			c = Math.floor(b / a);
+			c = Math.ceil(b / a);
 		else if( sub[i] == '%' )
 			c = b % a;
 		while((start-1)>=0 && expression[start - 1] == '(' && (end+1)<expression.length && expression[end+1] == ')') {
