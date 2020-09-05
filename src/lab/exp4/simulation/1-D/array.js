@@ -22,6 +22,7 @@ window.view = {
 		this.key = 0
 		this.m = 0
 	},
+	
 	getNextDivToHighlight: function(lastHighlightedDiv) {
 		var next = lastHighlightedDiv.nextSibling
 		next = next.nextSibling
@@ -76,7 +77,20 @@ window.view = {
 			this.numbers.push(String(random))
 		}
 	},
+	disableTextArea: function() {
+		var element = document.getElementsByName('radio_group')
+		if ( element[0].checked )
+			document.getElementById("userInput").disabled = true	
+	},
+	
+	//disableTextArea: function(){
+		//var element = document.getElementsByName('radio_group')
+		//if ( element[0].checked ){
+		//if (document.getElementById("btnRandom").checked == true)
+		//document.getElementById("userInput").disabled==true
+	//},
 	getUserInput: function() {
+		
 		var inputValue = document.getElementById('userInput').value
 		inputValue = inputValue.replace(/\s/g, ',')
 		this.numbers = inputValue.split(',')
@@ -85,6 +99,8 @@ window.view = {
 		var element = document.getElementsByName('radio_group')
 		if ( element[0].checked )
 			this.generateRandomNumbers()
+			
+			
 		else if (element[1].checked)
 			this.getUserInput()
 	},
