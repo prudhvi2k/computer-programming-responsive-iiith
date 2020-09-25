@@ -20,6 +20,7 @@ window.model = {
 				break;
 			}
 		}
+//added test comments
 		if(isexpfinished == 1)
 			return [-1, -1]
 		var sub;
@@ -139,7 +140,7 @@ window.model = {
 		else if( sub[i] == '*' )
 			c = a * b;
 		else if( sub[i] == '/' )
-			c = Math.ceil(b / a);
+			c = Math.floor(b / a);
 		else if( sub[i] == '%' )
 			c = b % a;
 		while((start-1)>=0 && expression[start - 1] == '(' && (end+1)<expression.length && expression[end+1] == ')') {
@@ -544,6 +545,13 @@ window.view = {
 		document.getElementById('buttonEdit').className = 'button editButton'
 	},
 	deFreezeInputs: function () {
+
+		//setting values to 0
+		document.getElementById('a').value =0; 
+		document.getElementById('b').value =0; 
+		document.getElementById('c').value =0; 
+		document.getElementById('d').value =0; 
+
 		this.enableElement('a')
 		this.enableElement('b')
 		this.enableElement('c')
